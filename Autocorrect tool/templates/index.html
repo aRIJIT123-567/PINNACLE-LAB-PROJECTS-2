@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Autocorrect Tool</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #dff5e1, #b9e4c9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 500px;
+    border: 3px solid #7ed957;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.icons {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.icon {
+    width: 10px;
+    height: 10px;
+    background: #7ed957;
+    border-radius: 50%;
+}
+
+h1 {
+    color: #2e7d32;
+}
+
+p {
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #7ed957;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5fcf3a;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f3f3f3;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="icons">
+    <div class="icon"></div>
+    <div class="icon"></div>
+    <div class="icon"></div>
+</div>
+
+<h1>Autocorrect Tool</h1>
+
+<p>
+Design an AI-driven autocorrect tool to improve text accuracy and fluency, 
+reducing errors in typing and communication.
+</p>
+
+<form method="POST">
+    <textarea name="text" placeholder="Enter text with mistakes..."></textarea>
+    <button type="submit">Correct Text</button>
+</form>
+
+{% if corrected_text %}
+<div class="result">
+    <b>Corrected:</b><br>
+    {{ corrected_text }}
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
